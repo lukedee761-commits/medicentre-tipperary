@@ -125,7 +125,7 @@ a:hover { color: var(--spruce-deep); }
 /* ---------- main / sections ---------- */
 main { min-width: 0; position: relative; }
 
-.section { padding: var(--space-6) clamp(24px, 6vw, 88px); }
+.section { padding: var(--space-6) clamp(24px, 6vw, 88px); scroll-margin-top: 16px; }
 .section--tint { background: var(--paper); border-block: 1px solid var(--sage-soft); }
 
 .section__head { max-width: 640px; margin-bottom: var(--space-5); }
@@ -196,7 +196,7 @@ main { min-width: 0; position: relative; }
   fill: var(--ink-60); text-anchor: middle;
 }
 
-.rings__breather { transform-origin: 260px 260px; }
+.rings__breather { transform-box: fill-box; transform-origin: center; }
 @keyframes breathe {
   from { transform: scale(1); }
   to   { transform: scale(1.045); }
@@ -304,7 +304,8 @@ main { min-width: 0; position: relative; }
   transition: border-color .2s var(--ease-out), background-color .2s var(--ease-out);
 }
 .field textarea { min-height: 110px; resize: vertical; }
-.field input:focus, .field textarea:focus { border-color: var(--spruce); background: #FFFFFF; outline: none; }
+.field input:focus, .field textarea:focus { border-color: var(--spruce); background: #FFFFFF; }
+.field input:focus:not(:focus-visible), .field textarea:focus:not(:focus-visible) { outline: none; }
 .field input[aria-invalid="true"], .field textarea[aria-invalid="true"] { border-color: #A03123; }
 
 .field--consent { display: flex; gap: 10px; align-items: flex-start; }
